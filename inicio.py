@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
-from tkinter import messagebox
+import Ventana1
+import Ventana2
 
 class Aplicacion():
     def __init__(self):
@@ -22,49 +23,23 @@ class Aplicacion():
 
         # pestaña1
 
-        menubar.add_command(label = "Ventana 1", command = self.ventana1)
+        menubar.add_command(label = "Ventana 1", command=self.ventauno)
 
         # pestaña2
 
-        menubar.add_command(label="Ventana 2", command=self.ventana2)
+        menubar.add_command(label="Ventana 2", command=self.ventados)
 
         #asignamos el menu
         self.root.config(menu = menubar)
 
 
-        #diseño de ventana1
-
-
-        # diseño de ventana2
-
-
         self.root.mainloop()
 
-    def ventana1(self):
-        try:
-            self.frame2.pack_forget()
-            self.frame1 = Frame(self.root, width=800, height=600)
-            self.label1 = Label(self.frame1, text="VENTANA 1")
-            self.label1.place(relx=0.5, rely=0.5, anchor=S)
-            self.frame1.pack()
-        except AttributeError:
-            self.frame1 = Frame(self.root,width = 800, height = 600)
-            self.label1 = Label(self.frame1, text = "VENTANA 1")
-            self.label1.place(relx=0.5, rely=0.5, anchor = S)
-            self.frame1.pack()
+    def ventauno(self):
+        Ventana1.ventana1(self)
 
-    def ventana2(self):
-        try:
-            self.frame1.pack_forget()
-            self.frame2 = Frame(self.root, width=800, height=600)
-            self.label2 = Label(self.frame2, text="VENTANA 2")
-            self.label2.place(relx=0.5, rely=0.5, anchor=S)
-            self.frame2.pack()
-        except AttributeError:
-            self.frame2 = Frame(self.root, width=800, height=600)
-            self.label2 = Label(self.frame2, text="VENTANA 2")
-            self.label2.place(relx=0.5, rely=0.5, anchor=S)
-            self.frame2.pack()
+    def ventados(self):
+        Ventana2.ventana2(self)
 
 
 

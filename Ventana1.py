@@ -1,22 +1,20 @@
 from inicio import *
 
 '''
-Para cambiar de ventana, es necesario que primero intente eliminar el frame anterior.
-Con este Try, se comprueba si existe el frame creado y si es asi, primero lo olvida y luego
-crea el nuevo.
-TO-DO: Buscar un metodo mas eficiente y limpio de hacer esto. Por ahora, tendrá que servir
+ La funcion ventana2 comprueba mediante un Try, si el frame1 esta cargado, y de ser asi lo quita.
+ Queda pendiente diseñar el modo de tener mas de 2 frames
 '''
 
 def ventana1(self):
 
     try:
         self.frame2.pack_forget()
-        self.frame1 = Frame(self.root, width=800, height=600)
-        self.label1 = Label(self.frame1, text="VENTANA 1")
-        self.label1.place(relx=0.5, rely=0.5, anchor=S)
-        self.frame1.pack()
+        CreaVentana1(self)
     except AttributeError:
-        self.frame1 = Frame(self.root, width=800, height=600)
-        self.label1 = Label(self.frame1, text="VENTANA 1")
-        self.label1.place(relx=0.5, rely=0.5, anchor=S)
-        self.frame1.pack()
+        CreaVentana1(self)
+
+def CreaVentana1(self):
+    self.frame1 = Frame(self.root, width=800, height=600)
+    self.label1 = Label(self.frame1, text="VENTANA 1")
+    self.label1.place(relx=0.5, rely=0.5, anchor=S)
+    self.frame1.pack()

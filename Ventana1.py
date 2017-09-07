@@ -8,9 +8,9 @@ from inicio import *
 def ventana1(self):
 
     try:
-        self.frame2.pack_forget()
+        self.root.pack_slaves()[0].destroy()
         CreaVentana1(self)
-    except AttributeError:
+    except IndexError:
         CreaVentana1(self)
 
 def CreaVentana1(self):

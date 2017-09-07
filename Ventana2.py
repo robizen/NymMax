@@ -9,9 +9,9 @@ from tkinter import messagebox
 def ventana2(self):
 
     try:
-        self.frame1.pack_forget()
+        self.root.pack_slaves()[0].destroy()
         CreaVentana2(self)
-    except AttributeError:
+    except IndexError:
         CreaVentana2(self)
 
 
